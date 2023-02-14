@@ -14,10 +14,12 @@ class AddItem {
       var error = 0;
       self.fields.forEach((field) => {
         const input = document.querySelector(`#${field}`);
+
         if (self.validateFields(input) == false) {
           error++;
         }
       });
+
       if (error == 0) {
         const senderName = document.querySelector(`#senderName`).value;
         const senderEmail = document.querySelector(`#senderEmail`).value;
@@ -27,6 +29,8 @@ class AddItem {
         const recieverEmail = document.querySelector(`#recieverEmail`).value;
         const recieverName = document.querySelector(`#recieverName`).value;
         const shippingDate = document.querySelector(`#shippingDate`).value;
+        const packageShipped = document.querySelector(`#packageShipped`).value;
+        const senderAddress = document.querySelector(`#senderAddress`).value;
         const shippingDuration =
           document.querySelector(`#shippingDuration`).value;
         const comingFrom = document.querySelector(`#comingFrom`).value;
@@ -43,7 +47,9 @@ class AddItem {
             recieverName,
             comingFrom,
             shippingDate,
+            packageShipped,
             shippingDuration,
+            senderAddress,
           }),
           method: "post",
           headers: {
@@ -54,6 +60,7 @@ class AddItem {
           // loading.style.display = "none";
           let data = await response.json();
           //   console.log(data);
+
           showToast(data.message);
         }
       }
@@ -61,6 +68,14 @@ class AddItem {
   }
 
   validateFields(field) {
+    // Swal.fire({
+    //   title: "Error!",
+    //   text: `${field.previousElementSibling.innerText} cannot be blank`,
+    //   icon: "error",
+    // });
+    // //   errorMessage.innerText = message;
+
+    // document.getElementById("submitBtn").disabled = false;
     if (field.value.trim() === "") {
       this.setStatus(
         field,
@@ -119,7 +134,7 @@ function showToast(txt) {
     icon: "success",
   }).then((result) => {
     if (result.isConfirmed) {
-      window.location.replace("/pages/index.html");
+      window.location.replace("/index.html");
     }
   });
   //   setTimeout(function () {
@@ -132,6 +147,7 @@ if (form) {
   const fields = [
     "senderEmail",
     "senderName",
+    "senderAddress",
     "recieverAddress",
     "senderPhone",
     "recieverName",
@@ -139,6 +155,7 @@ if (form) {
     "shippingDuration",
     "shippingDate",
     "comingFrom",
+    "packageShipped",
   ];
   const validator = new AddItem(form, fields);
 }

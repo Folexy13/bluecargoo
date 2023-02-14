@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="../css/slick.css" />
     <link rel="stylesheet" href="../css/default.css" />
     <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/responsive.css" />
+    <!-- <link rel="stylesheet" href="../css/responsive.css" /> -->
     <link rel="stylesheet" href="../css/min.css" />
     <link
       rel="stylesheet"
@@ -187,7 +187,7 @@
           <div class="row align-items-center">
             <div class="col-lg-3 col-md-6">
               <div class="logo">
-                <a href="index.html"
+                <a href="/index.html"
                   ><img
                     src="../images/logo.jpeg"
                     class="mobile-logo"
@@ -201,8 +201,8 @@
                 <div class="main-menu">
                   <nav id="mobile-menu">
                     <ul>
-                      <li class="active">
-                        <a href="index.html">Home</a>
+                      <li>
+                        <a href="/index.html">Home</a>
                         <!-- <ul class="submenu">
                                                     <li class="active"><a href="index.html">Home One</a></li>
                                                     <li><a href="index-2.html">Home Two</a></li>
@@ -210,7 +210,7 @@
                                                 </ul> -->
                       </li>
                       <li><a href="#">Company</a></li>
-                      <li><a href="#">Tracking</a></li>
+                      <li class=""><a href="#">Tracking</a></li>
                       <li>
                         <a href="#">Services</a>
                         <ul class="submenu">
@@ -231,6 +231,9 @@
                         </ul>
                       </li>
                       <li><a href="support.html">Support</a></li>
+                      <li class="active">
+                        <a href="/pages/dashboard.html">Dashboard</a>
+                      </li>
                     </ul>
                   </nav>
                 </div>
@@ -569,6 +572,14 @@
               <input type="text" placeholder="+14134141414" id="senderPhone" />
             </div>
             <div class="form_control">
+              <label for="">Sender Address</label>
+              <input
+                type="text"
+                placeholder="Futa south gate"
+                id="senderAddress"
+              />
+            </div>
+            <div class="form_control">
               <label for="">Reciever Name</label>
               <input type="text" placeholder="Mary Doe" id="recieverName" />
             </div>
@@ -587,6 +598,10 @@
                 placeholder="19 marydostreet,Uk,London"
                 id="recieverAddress"
               />
+            </div>
+            <div class="form_control">
+              <label for="">Package shipped</label>
+              <input type="text" placeholder="cloth" id="packageShipped" />
             </div>
             <div class="form_control">
               <label for="">Shipping Date</label>
@@ -608,6 +623,132 @@
               <button type="submit" id="submitBtn">Add Item</button>
             </div>
           </form>
+        </div>
+        <div style="overflow-x: auto">
+          <div id="loading" style="width: 50%; margin: 50px auto">
+            Loading...
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-12 col-xs-12 col-md-12">
+                <!-- Tracking History -->
+                <div class="block-content">
+                  <div class="table-responsive">
+                    <table
+                      id="tabledata"
+                      class="table table-clean-paddings margin-bottom-0"
+                    >
+                      <!-- <thead>
+                      <tr>
+                        <th>Customer</th>
+                        <th>Shipped From</th>
+                        <th>Shipping Id</th>
+                        <th>Destination</th>
+                        <th>Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <div class="contact-container">
+                            <a href="#">Muhammad Umair</a>
+                            <span>on Aug 19, 2016</span>
+                          </div>
+                        </td>
+                        <td>London</td>
+                        <td>SW-95-21</td>
+                        <td>New York</td>
+                        <td>
+                          <span class="label label-success label-transparent"
+                            >Delivered</span
+                          >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="contact-container">
+                            <a href="#">Muhammad Umair</a>
+                            <span>on Aug 19, 2016</span>
+                          </div>
+                        </td>
+                        <td>London</td>
+                        <td>SW-95-21</td>
+                        <td>New York</td>
+                        <td>
+                          <span class="label label-warning label-transparent"
+                            >Shipped</span
+                          >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="contact-container">
+                            <a href="#">Muhammad Umair</a>
+                            <span>on Aug 19, 2016</span>
+                          </div>
+                        </td>
+                        <td>London</td>
+                        <td>SW-95-21</td>
+                        <td>New York</td>
+                        <td>
+                          <span class="label label-danger label-transparent"
+                            >Canceled</span
+                          >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="contact-container">
+                            <a href="#">Muhammad Umair</a>
+                            <span>on Aug 19, 2016</span>
+                          </div>
+                        </td>
+                        <td>London</td>
+                        <td>SW-95-21</td>
+                        <td>New York</td>
+                        <td>
+                          <span class="label label-primary label-transparent"
+                            >Pending</span
+                          >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="contact-container">
+                            <a href="#">Muhammad Umair</a>
+                            <span>on Aug 19, 2016</span>
+                          </div>
+                        </td>
+                        <td>London</td>
+                        <td>SW-95-21</td>
+                        <td>New York</td>
+                        <td>
+                          <span class="label label-success label-transparent"
+                            >Delivered</span
+                          >
+                        </td>
+                      </tr>
+                    </tbody> -->
+                    </table>
+                    <div
+                      id="error"
+                      style="
+                        text-align: center;
+                        margin: 50px 0 50px 0;
+                        font-size: 24px;
+                      "
+                    ></div>
+                  </div>
+                </div>
+                <!-- Tracking History End -->
+              </div>
+            </div>
+          </div>
+          <!-- <table id="tabledata"></table> -->
+          <!-- <div
+          id="error"
+          style="text-align: center; margin: -50px 0 50px 0; font-size: 24px"
+        ></div> -->
         </div>
       </section>
     </main>
