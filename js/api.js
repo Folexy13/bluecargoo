@@ -19,6 +19,7 @@ async function getapi(url) {
       show(data);
       hideloader();
     } else {
+      document.getElementById("loading").style.display = "block";
       d = true;
     }
   } catch (d) {

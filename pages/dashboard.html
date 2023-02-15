@@ -50,14 +50,24 @@
     }
     .flexy {
       display: flex;
-      padding: 100px;
+      padding: 100px 50px;
       position: relative;
       min-height: 749px;
       background-position: center;
       background-size: cover;
+      gap: 50px;
+      justify-content: space-around;
     }
-    .card {
+    .card,
+    table {
       box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      background: #fff !important;
+    }
+    table span {
+      display: block;
+    }
+    form {
+      min-width: 500px;
     }
     .form_control {
       padding: 5px 20px;
@@ -624,124 +634,28 @@
             </div>
           </form>
         </div>
-        <div style="overflow-x: auto">
+        <div style="overflow-x: auto; padding: 20px">
           <div id="loading" style="width: 50%; margin: 50px auto">
             Loading...
           </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-sm-12 col-xs-12 col-md-12">
-                <!-- Tracking History -->
-                <div class="block-content">
-                  <div class="table-responsive">
-                    <table
-                      id="tabledata"
-                      class="table table-clean-paddings margin-bottom-0"
-                    >
-                      <!-- <thead>
-                      <tr>
-                        <th>Customer</th>
-                        <th>Shipped From</th>
-                        <th>Shipping Id</th>
-                        <th>Destination</th>
-                        <th>Status</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>
-                          <div class="contact-container">
-                            <a href="#">Muhammad Umair</a>
-                            <span>on Aug 19, 2016</span>
-                          </div>
-                        </td>
-                        <td>London</td>
-                        <td>SW-95-21</td>
-                        <td>New York</td>
-                        <td>
-                          <span class="label label-success label-transparent"
-                            >Delivered</span
-                          >
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="contact-container">
-                            <a href="#">Muhammad Umair</a>
-                            <span>on Aug 19, 2016</span>
-                          </div>
-                        </td>
-                        <td>London</td>
-                        <td>SW-95-21</td>
-                        <td>New York</td>
-                        <td>
-                          <span class="label label-warning label-transparent"
-                            >Shipped</span
-                          >
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="contact-container">
-                            <a href="#">Muhammad Umair</a>
-                            <span>on Aug 19, 2016</span>
-                          </div>
-                        </td>
-                        <td>London</td>
-                        <td>SW-95-21</td>
-                        <td>New York</td>
-                        <td>
-                          <span class="label label-danger label-transparent"
-                            >Canceled</span
-                          >
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="contact-container">
-                            <a href="#">Muhammad Umair</a>
-                            <span>on Aug 19, 2016</span>
-                          </div>
-                        </td>
-                        <td>London</td>
-                        <td>SW-95-21</td>
-                        <td>New York</td>
-                        <td>
-                          <span class="label label-primary label-transparent"
-                            >Pending</span
-                          >
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="contact-container">
-                            <a href="#">Muhammad Umair</a>
-                            <span>on Aug 19, 2016</span>
-                          </div>
-                        </td>
-                        <td>London</td>
-                        <td>SW-95-21</td>
-                        <td>New York</td>
-                        <td>
-                          <span class="label label-success label-transparent"
-                            >Delivered</span
-                          >
-                        </td>
-                      </tr>
-                    </tbody> -->
-                    </table>
-                    <div
-                      id="error"
-                      style="
-                        text-align: center;
-                        margin: 50px 0 50px 0;
-                        font-size: 24px;
-                      "
-                    ></div>
-                  </div>
-                </div>
-                <!-- Tracking History End -->
-              </div>
+          <div class="row">
+            <div class="col-sm-12 col-xs-12 col-md-12">
+              <h4 style="color: #fff">Recent Transaction</h4>
+              <!-- Tracking History -->
+              <table
+                id="data"
+                class="table table-clean-paddings margin-bottom-0"
+              ></table>
+              <div
+                id="error"
+                style="
+                  text-align: center;
+                  margin: 50px 0 50px 0;
+                  font-size: 24px;
+                  color: #fff;
+                "
+              ></div>
+              <!-- Tracking History End -->
             </div>
           </div>
           <!-- <table id="tabledata"></table> -->
@@ -911,6 +825,8 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCo_pcAdFNbTDCAvMwAD19oRTuEmb9M50c"></script>
     <script src="../js/plugins.js"></script>
     <script src="../js/main.js"></script>
+    <script src="/js/updateItem.js"></script>
+
     <script>
       function checkAuth() {
         console.log(localStorage.getItem("auth") !== "1");
