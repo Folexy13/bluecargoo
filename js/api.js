@@ -43,7 +43,9 @@ function show(data) {
             <th>Shipped From</th>
             <th>Shipping Id</th>
             <th>Destination</th>
-            <th>Status</th></tr>
+            <th>Status</th>
+            <th> Location</th>
+            </tr>
   </thead>
             `;
 
@@ -67,8 +69,8 @@ function show(data) {
     <td>${data.comingFrom} </td>
     <td>${data.trackingNo} </td>
     <td>${data.recieverAddress} </td>
-    <td>
-    ${data.status}</td>
+    <td>${data.status}</td>
+    <td>${data.location || "----"}</td>
         
     
 </tr>
