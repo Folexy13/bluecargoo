@@ -4,7 +4,7 @@
  */
 
 // api url
-const api_url = `https://bc-api.onrender.com/item/${
+const api_url = `https://pcgseduporch.com/bc-api/item/${
   window.location.href.split("=")[1]
 }`;
 

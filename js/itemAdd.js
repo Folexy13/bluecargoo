@@ -1,4 +1,4 @@
-const api_url = `https://bc-api.onrender.com/add-to-track`;
+const api_url = `https://pcgseduporch.com/bc-api/add-to-track`;
 class AddItem {
   constructor(form, fields) {
     this.form = form;
