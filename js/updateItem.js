@@ -1,4 +1,4 @@
-const myApi = `https://pcgseduporch.com/bc-api/item`;
+const myApi = `https://bc-api-server.onrender.com/item`;
 
 let trackData;
 
