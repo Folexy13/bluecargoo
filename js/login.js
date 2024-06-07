@@ -1,4 +1,4 @@
-const api_url = `https://pcgseduporch.com/bc-api/login`;
+const api_url = `https://bc-api-server.onrender.com/login`;
 class Login {
   constructor(form, fields) {
     this.form = form;
