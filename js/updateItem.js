@@ -29,7 +29,7 @@ async function updateStatus(index) {
   var selectedValue = status.options[status.selectedIndex].value;
   console.log(selectedValue);
   const response = await fetch(
-    `https://pcgseduporch.com/bc-api/item/${trackData[index].trackingNo}`,
+    `https://bc-api-server.onrender.com/item/${trackData[index].trackingNo}`,
     {
       method: "post", // make a PUT request to update data
       body: JSON.stringify({ status: selectedValue }), // request body
@@ -50,7 +50,7 @@ async function updateLocation(index) {
   var location = document.getElementById(`location-${index}`).value;
   document.getElementById(`updateBtn-${index}`).disabled = true;
   const response = await fetch(
-    `https://pcgseduporch.com/bc-api/item/${trackData[index].trackingNo}`,
+    `https://bc-api-server.onrender.com/item/${trackData[index].trackingNo}`,
     {
       method: "post", // make a PUT request to update data
       body: JSON.stringify({ location }), // request body
