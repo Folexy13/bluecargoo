@@ -118,7 +118,7 @@ function show(data) {
                         <option value="Shipped">Shipped</option>
                         <option value="Delivered">Delivered</option>
                         <option value="Canceled">Canceled</option>
-                        <option value="Hold (Your goods has been seized- Please contact: - +233 506 586 650-2899 or email:  BluCargooShippingCompany@Consultant.com)">On Hold </option>
+                        <option value="Hold (Your goods has been seized- Please contact us on our email:  BluCargooShippingCompany@Consultant.com)">On Hold </option>
                       </select>
    </td>
     <td class="tabled">
